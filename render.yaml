@@ -1,0 +1,15 @@
+# Blueprint Render — site statique (aucun build nécessaire)
+services:
+  - type: web
+    name: rf-impact
+    runtime: static
+    buildCommand: "echo 'Site statique, aucun build'"
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff

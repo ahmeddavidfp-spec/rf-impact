@@ -1,0 +1,14 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aile réparée - après">
+  <defs>
+    <linearGradient id="fabg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2a44"/><stop offset="0.5" stop-color="#35508a"/><stop offset="1" stop-color="#182036"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#fabg)"/>
+  <path d="M0 200 Q400 150 800 210" stroke="#a9c8ff" stroke-width="3" fill="none" opacity="0.5"/>
+  <ellipse cx="300" cy="140" rx="260" ry="60" fill="#ffffff" opacity="0.10"/>
+  <g font-family="'Segoe UI', sans-serif">
+    <rect x="24" y="24" width="120" height="40" rx="8" fill="#0f1826" opacity="0.9"/>
+    <text x="84" y="50" font-size="20" font-weight="700" fill="#ff5e3a" text-anchor="middle">APRÈS</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "name": "RF Impact — Débosselage sans peinture",
+  "short_name": "RF Impact",
+  "description": "Atelier de débosselage sans peinture (DSP), grêle, polissage et formations à Wavre. Devis gratuit en ligne.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1220",
+  "theme_color": "#0f1826",
+  "lang": "fr",
+  "categories": ["business", "automotive", "utilities"],
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Demander un devis", "short_name": "Devis", "url": "./index.html#contact" },
+    { "name": "Appeler", "short_name": "Appeler", "url": "tel:+32477478714" }
+  ]
+}

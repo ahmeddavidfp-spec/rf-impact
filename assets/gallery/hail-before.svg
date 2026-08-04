@@ -1,0 +1,26 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Toit grêlé - avant">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9aa3b4"/><stop offset="0.5" stop-color="#c9d1dd"/><stop offset="1" stop-color="#767f91"/>
+    </linearGradient>
+    <radialGradient id="ding" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#3d4658" stop-opacity="0.85"/><stop offset="1" stop-color="#3d4658" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#hbg)"/>
+  <rect x="0" y="0" width="800" height="150" fill="#ffffff" opacity="0.10"/>
+  <g>
+    <circle cx="160" cy="180" r="26" fill="url(#ding)"/><circle cx="260" cy="150" r="20" fill="url(#ding)"/>
+    <circle cx="360" cy="200" r="30" fill="url(#ding)"/><circle cx="470" cy="160" r="22" fill="url(#ding)"/>
+    <circle cx="580" cy="210" r="28" fill="url(#ding)"/><circle cx="680" cy="170" r="18" fill="url(#ding)"/>
+    <circle cx="210" cy="300" r="24" fill="url(#ding)"/><circle cx="330" cy="330" r="30" fill="url(#ding)"/>
+    <circle cx="450" cy="300" r="22" fill="url(#ding)"/><circle cx="560" cy="340" r="26" fill="url(#ding)"/>
+    <circle cx="660" cy="310" r="20" fill="url(#ding)"/><circle cx="150" cy="420" r="22" fill="url(#ding)"/>
+    <circle cx="280" cy="450" r="28" fill="url(#ding)"/><circle cx="410" cy="430" r="24" fill="url(#ding)"/>
+    <circle cx="540" cy="460" r="30" fill="url(#ding)"/><circle cx="650" cy="440" r="20" fill="url(#ding)"/>
+  </g>
+  <g font-family="'Segoe UI', sans-serif">
+    <rect x="24" y="24" width="120" height="40" rx="8" fill="#0f1826" opacity="0.85"/>
+    <text x="84" y="50" font-size="20" font-weight="700" fill="#ff6b57" text-anchor="middle">AVANT</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Divers
+node_modules/
+*.zip
+
+# Contenu hors-site (ne PAS publier)
+youthspeak-case/
+youthspeak-case
+outputs/
+.codex-image-inputs/
