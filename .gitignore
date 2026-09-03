@@ -14,3 +14,6 @@ youthspeak-case/
 youthspeak-case
 outputs/
 .codex-image-inputs/
+
+# Documentation interne (locale, ne pas publier)
+RF-Impact-Documentation.html

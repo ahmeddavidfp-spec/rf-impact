@@ -1,5 +1,5 @@
 /* RF Impact — Service Worker (offline-first for the app shell) */
-const CACHE = 'rf-impact-v8';
+const CACHE = 'rf-impact-v9';
 const ASSETS = [
   './',
   './index.html',

@@ -108,7 +108,7 @@
       'faq.q5': 'Offrez-vous une garantie ?', 'faq.a5': 'Oui : toutes nos réparations sont garanties à vie.',
       'faq.q6': 'Proposez-vous des formations ?', 'faq.a6': 'Oui, pour les professionnels comme pour les particuliers. Contactez-nous pour le programme et les tarifs.',
       'footer.tagline': 'Atelier de débosselage sans peinture & polissage à Wavre.',
-      'footer.nav': 'Navigation', 'footer.contact': 'Contact', 'footer.hours': 'Horaires', 'footer.credit': 'Site de démonstration RF Impact',
+      'footer.nav': 'Navigation', 'footer.contact': 'Contact', 'footer.hours': 'Horaires', 'footer.credit': 'Site créé par',
       'mobile.call': 'Appeler', 'mobile.quote': 'Devis', 'mobile.route': 'Itinéraire', 'pwa.install': "Installer l'app",
       'form.sent': '✅ Merci ! Votre client e-mail va s’ouvrir pour finaliser l’envoi.',
       'form.error': '⚠️ Merci de compléter les champs obligatoires.'
@@ -216,7 +216,7 @@
       'faq.q5': 'Bieden jullie garantie?', 'faq.a5': 'Ja: al onze herstellingen zijn levenslang gewaarborgd.',
       'faq.q6': 'Bieden jullie opleidingen aan?', 'faq.a6': 'Ja, voor professionals en particulieren. Contacteer ons voor het programma en de tarieven.',
       'footer.tagline': 'Werkplaats voor uitdeuken zonder spuiten & polijsten in Waver.',
-      'footer.nav': 'Navigatie', 'footer.contact': 'Contact', 'footer.hours': 'Openingsuren', 'footer.credit': 'Demonstratiesite RF Impact',
+      'footer.nav': 'Navigatie', 'footer.contact': 'Contact', 'footer.hours': 'Openingsuren', 'footer.credit': 'Site gemaakt door',
       'mobile.call': 'Bellen', 'mobile.quote': 'Offerte', 'mobile.route': 'Route', 'pwa.install': 'App installeren',
       'form.sent': '✅ Bedankt! Uw e-mailprogramma opent om de verzending af te ronden.',
       'form.error': '⚠️ Vul de verplichte velden in.'
@@ -324,7 +324,7 @@
       'faq.q5': 'Do you offer a warranty?', 'faq.a5': 'Yes: all our repairs come with a lifetime warranty.',
       'faq.q6': 'Do you offer training?', 'faq.a6': 'Yes, for professionals and individuals alike. Contact us for the program and pricing.',
       'footer.tagline': 'Paintless dent removal & polishing workshop in Wavre.',
-      'footer.nav': 'Navigation', 'footer.contact': 'Contact', 'footer.hours': 'Hours', 'footer.credit': 'Demo site RF Impact',
+      'footer.nav': 'Navigation', 'footer.contact': 'Contact', 'footer.hours': 'Hours', 'footer.credit': 'Site created by',
       'mobile.call': 'Call', 'mobile.quote': 'Quote', 'mobile.route': 'Directions', 'pwa.install': 'Install app',
       'form.sent': '✅ Thank you! Your email client will open to finalize sending.',
       'form.error': '⚠️ Please complete the required fields.'
