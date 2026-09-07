@@ -1,5 +1,5 @@
-/* RF Impact — Service Worker (offline-first for the app shell) */
-const CACHE = 'rf-impact-v9';
+/* RF Impact - Service Worker (offline-first for the app shell) */
+const CACHE = 'rf-impact-v10';
 const ASSETS = [
   './',
   './index.html',
@@ -36,14 +36,14 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  // Don't cache external map/font tiles — go to network
+  // Don't cache external map/font tiles - go to network
   if (url.origin !== self.location.origin) return;
 
   e.respondWith(
     caches.match(req).then((cached) => {
       if (cached) return cached;
       return fetch(req).then((res) => {
-        // Only cache valid (200) responses — never 404s or errors.
+        // Only cache valid (200) responses - never 404s or errors.
         if (res && res.ok && res.status === 200) {
           const copy = res.clone();
           caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});

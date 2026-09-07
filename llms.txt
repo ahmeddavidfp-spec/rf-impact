@@ -1,0 +1,37 @@
+# RF Impact
+
+> Atelier de débosselage sans peinture (DSP) à Wavre (Bierges), en Brabant wallon (Belgique). Seul atelier de la région entièrement dédié au DSP. Plus de 30 ans d'expérience, garantie à vie, note Google 4,9/5 sur 93 avis. Site vitrine trilingue (FR / NL / EN), installable comme application (PWA).
+
+## À propos
+- Gérant et fondateur : Ronald Frappart, plus de 30 ans d'expérience
+- Atelier fondé à Bierges en 2014
+- Adresse : Rue de Genval 30, 1301 Wavre, Belgique
+- Téléphone : +32 477 47 87 14
+- E-mail : RF@hotmail.be
+- TVA : BE 0474.863.795
+- Horaires : du lundi au vendredi de 09:00 à 18:30, week-end fermé
+- Zone desservie : Wavre, Bierges, Rixensart, Genval, Ottignies-Louvain-la-Neuve, Brabant wallon
+
+## Services
+- Débosselage sans peinture (DSP) : bosses, coups de portière, chocs de caddie
+- Réparation des dégâts de grêle
+- Polissage et lustrage de carrosserie
+- Smart Repair et remise en état pour retour de leasing
+
+## Pages et sections
+- [Accueil](https://rf-impact.pages.dev/) : présentation de l'atelier
+- [Services](https://rf-impact.pages.dev/#services) : le détail des prestations
+- [Galerie avant / après](https://rf-impact.pages.dev/#gallery) : exemples de réparations
+- [Histoire et valeurs](https://rf-impact.pages.dev/#story) : le parcours de RF Impact
+- [Équipe](https://rf-impact.pages.dev/#team) : les personnes de l'atelier
+- [Avis](https://rf-impact.pages.dev/#reviews) : avis clients Google
+- [FAQ](https://rf-impact.pages.dev/#faq) : questions fréquentes
+- [Contact et devis](https://rf-impact.pages.dev/#contact) : formulaire de devis gratuit et itinéraire
+
+## Contact
+- Devis gratuit en ligne : https://rf-impact.pages.dev/#contact
+- Téléphone : +32 477 47 87 14
+- E-mail : RF@hotmail.be
+
+## Créateur
+- Site conçu et développé par Scribeo : https://scribeo.be
