@@ -1,8 +1,10 @@
-/* RF Impact - Service Worker (offline-first for the app shell) */
-const CACHE = 'rf-impact-v11';
+/* RF Impact - Service Worker */
+const CACHE = 'rf-impact-v12';
+const OFFLINE = './hors-ligne.html';
 const ASSETS = [
   './',
   './index.html',
+  './hors-ligne.html',
   './styles.css',
   './app.js',
   './manifest.webmanifest',
@@ -32,24 +34,38 @@ self.addEventListener('activate', (e) => {
   );
 });
 
+// Recopie une reponse avant de la cacher : neutralise le drapeau "redirected"
+// (Cloudflare Pages reecrit /page.html en /page avec une redirection 308).
+function cachePut(req, res) {
+  if (!res || !res.ok || res.status !== 200) return;
+  const body = res.clone().body;
+  const clean = res.redirected
+    ? new Response(body, { status: res.status, statusText: res.statusText, headers: res.headers })
+    : res.clone();
+  caches.open(CACHE).then((c) => c.put(req, clean)).catch(() => {});
+}
+
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  // Don't cache external map/font tiles - go to network
-  if (url.origin !== self.location.origin) return;
+  if (url.origin !== self.location.origin) return; // laisser passer cartes, polices, etc.
 
+  // Navigations : reseau d'abord, repli sur le cache, dernier recours la page hors ligne.
+  if (req.mode === 'navigate') {
+    e.respondWith(
+      fetch(req)
+        .then((res) => { cachePut(req, res); return res; })
+        .catch(() => caches.match(req).then((cached) => cached || caches.match(OFFLINE)))
+    );
+    return;
+  }
+
+  // Autres requetes (CSS, JS, images, manifeste) : cache d'abord.
   e.respondWith(
     caches.match(req).then((cached) => {
       if (cached) return cached;
-      return fetch(req).then((res) => {
-        // Only cache valid (200) responses - never 404s or errors.
-        if (res && res.ok && res.status === 200) {
-          const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {});
-        }
-        return res;
-      }).catch(() => caches.match('./index.html'));
+      return fetch(req).then((res) => { cachePut(req, res); return res; }).catch(() => undefined);
     })
   );
 });
