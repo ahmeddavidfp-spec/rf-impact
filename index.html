@@ -2,7 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="RF Impact" />
   <meta name="theme-color" content="#e11d2a" />
   <title>RF Impact | Débosselage sans peinture à Wavre (DSP, grêle, polissage)</title>
   <meta name="description" content="RF Impact à Wavre (Bierges) : le seul atelier de la région entièrement dédié au débosselage sans peinture (DSP). Plus de 30 ans d'expérience, garantie à vie, 4,9/5 sur Google. Grêle, coups de portière, polissage. Devis gratuit." />
@@ -655,8 +659,17 @@
     </a>
   </nav>
 
-  <!-- Install PWA prompt -->
+  <!-- Install PWA prompt (Android/Chrome via beforeinstallprompt) -->
   <button id="installBtn" class="install-btn" hidden>⬇ <span data-i18n="pwa.install">Installer l'app</span></button>
+
+  <!-- Notice d'installation iOS (Safari n'a pas beforeinstallprompt) -->
+  <div id="iosInstall" class="ios-install" role="note" hidden>
+    <button class="ios-close" id="iosClose" type="button" aria-label="Fermer">&times;</button>
+    <p class="ios-install-text">
+      <svg class="ios-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 7 4-4 4 4"/><path d="M6 11H4.5v8.5h15V11H18"/></svg>
+      <span data-i18n="pwa.iosNotice">Pour installer l'app : touchez Partager dans Safari, puis « Sur l'écran d'accueil ».</span>
+    </p>
+  </div>
 
   <script src="app.js"></script>
 </body>

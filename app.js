@@ -110,6 +110,7 @@
       'footer.tagline': 'Atelier de débosselage sans peinture & polissage à Wavre.',
       'footer.nav': 'Navigation', 'footer.contact': 'Contact', 'footer.hours': 'Horaires', 'footer.credit': 'Site créé par',
       'mobile.call': 'Appeler', 'mobile.quote': 'Devis', 'mobile.route': 'Itinéraire', 'pwa.install': "Installer l'app",
+      'pwa.iosNotice': "Pour installer l'app : touchez Partager dans Safari, puis « Sur l'écran d'accueil ».",
       'form.sent': '✅ Merci ! Votre client e-mail va s’ouvrir pour finaliser l’envoi.',
       'form.error': '⚠️ Merci de compléter les champs obligatoires.'
     },
@@ -218,6 +219,7 @@
       'footer.tagline': 'Werkplaats voor uitdeuken zonder spuiten & polijsten in Waver.',
       'footer.nav': 'Navigatie', 'footer.contact': 'Contact', 'footer.hours': 'Openingsuren', 'footer.credit': 'Site gemaakt door',
       'mobile.call': 'Bellen', 'mobile.quote': 'Offerte', 'mobile.route': 'Route', 'pwa.install': 'App installeren',
+      'pwa.iosNotice': 'Om de app te installeren: tik op Delen in Safari, daarna « Zet op beginscherm ».',
       'form.sent': '✅ Bedankt! Uw e-mailprogramma opent om de verzending af te ronden.',
       'form.error': '⚠️ Vul de verplichte velden in.'
     },
@@ -326,6 +328,7 @@
       'footer.tagline': 'Paintless dent removal & polishing workshop in Wavre.',
       'footer.nav': 'Navigation', 'footer.contact': 'Contact', 'footer.hours': 'Hours', 'footer.credit': 'Site created by',
       'mobile.call': 'Call', 'mobile.quote': 'Quote', 'mobile.route': 'Directions', 'pwa.install': 'Install app',
+      'pwa.iosNotice': "To install the app: tap Share in Safari, then 'Add to Home Screen'.",
       'form.sent': '✅ Thank you! Your email client will open to finalize sending.',
       'form.error': '⚠️ Please complete the required fields.'
     }
@@ -586,6 +589,24 @@
       });
     }
     window.addEventListener('appinstalled', function () { if (btn) btn.hidden = true; });
+
+    // iOS : pas de beforeinstallprompt. On montre la notice du geste manuel.
+    var iosNote = document.getElementById('iosInstall');
+    if (iosNote) {
+      var ua = navigator.userAgent || '';
+      var isIOS = /iphone|ipad|ipod/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS
+      var standalone = window.navigator.standalone === true ||
+        (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+      var dismissed = false;
+      try { dismissed = localStorage.getItem('rf-ios-install') === '1'; } catch (e) {}
+      if (isIOS && !standalone && !dismissed) iosNote.hidden = false;
+      var close = document.getElementById('iosClose');
+      if (close) close.addEventListener('click', function () {
+        iosNote.hidden = true;
+        try { localStorage.setItem('rf-ios-install', '1'); } catch (e) {}
+      });
+    }
   }
 
   /* ---------------- Boot ---------------- */

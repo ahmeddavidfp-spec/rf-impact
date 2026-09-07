@@ -63,7 +63,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* ---------- Header ---------- */
 .site-header{position:sticky;top:0;z-index:100;background:rgba(11,18,32,.72);
-  backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+  backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s;
+  padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 .site-header.scrolled{border-bottom-color:var(--line);background:rgba(11,18,32,.9)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
 .brand{display:inline-flex;color:var(--text)}
@@ -298,8 +299,21 @@ ul,ol{margin:0;padding:0;list-style:none}
 .mbtn-fab svg{width:23px;height:23px}
 
 /* ---------- Install button ---------- */
-.install-btn{position:fixed;right:16px;bottom:80px;z-index:95;background:var(--grad);color:#ffffff;border:0;
+.install-btn{position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(80px + env(safe-area-inset-bottom));
+  z-index:95;background:var(--grad);color:#ffffff;border:0;
   border-radius:999px;padding:.7rem 1.1rem;font-weight:600;font-size:.85rem;cursor:pointer;box-shadow:var(--shadow)}
+
+/* Notice d'installation iOS */
+.ios-install{position:fixed;z-index:95;left:calc(16px + env(safe-area-inset-left));right:calc(16px + env(safe-area-inset-right));
+  bottom:calc(16px + env(safe-area-inset-bottom));max-width:420px;margin:0 auto;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem 2.4rem .9rem 1rem;
+  box-shadow:var(--shadow);color:var(--text)}
+.ios-install-text{margin:0;display:flex;align-items:center;gap:.6rem;font-size:.9rem;line-height:1.4}
+.ios-share{width:22px;height:22px;flex-shrink:0;color:var(--brand)}
+.ios-close{position:absolute;top:.4rem;right:.5rem;width:28px;height:28px;border:0;background:none;color:var(--muted);
+  font-size:1.3rem;line-height:1;cursor:pointer;border-radius:8px}
+.ios-close:hover{background:var(--bg-2);color:var(--text)}
+@media (min-width:520px){.ios-install{left:auto;right:calc(16px + env(safe-area-inset-right))}}
 
 /* ---------- Reveal animation ---------- */
 [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
