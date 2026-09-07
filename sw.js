@@ -1,5 +1,5 @@
 /* RF Impact - Service Worker */
-const CACHE = 'rf-impact-v12';
+const CACHE = 'rf-impact-v13';
 const OFFLINE = './hors-ligne.html';
 const ASSETS = [
   './',
@@ -20,9 +20,20 @@ const ASSETS = [
   './assets/gallery/fender-after.svg'
 ];
 
+// Precache asset par asset : addAll rejette les reponses redirigees (308 des URL .html
+// sur Cloudflare Pages). On recopie chaque reponse sans le drapeau "redirected".
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE).then((c) => Promise.all(ASSETS.map((u) =>
+      fetch(u, { cache: 'reload' }).then((res) => {
+        if (!res || !res.ok) return;
+        const body = res.clone().body;
+        const clean = res.redirected
+          ? new Response(body, { status: res.status, statusText: res.statusText, headers: res.headers })
+          : res.clone();
+        return c.put(u, clean);
+      }).catch(() => {})
+    ))).then(() => self.skipWaiting())
   );
 });
 
