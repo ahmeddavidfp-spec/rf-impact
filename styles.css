@@ -302,18 +302,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .install-btn{position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(80px + env(safe-area-inset-bottom));
   z-index:95;background:var(--grad);color:#ffffff;border:0;
   border-radius:999px;padding:.7rem 1.1rem;font-weight:600;font-size:.85rem;cursor:pointer;box-shadow:var(--shadow)}
-
-/* Notice d'installation iOS */
-.ios-install{position:fixed;z-index:95;left:calc(16px + env(safe-area-inset-left));right:calc(16px + env(safe-area-inset-right));
-  bottom:calc(16px + env(safe-area-inset-bottom));max-width:420px;margin:0 auto;
-  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:.9rem 2.4rem .9rem 1rem;
-  box-shadow:var(--shadow);color:var(--text)}
-.ios-install-text{margin:0;display:flex;align-items:center;gap:.6rem;font-size:.9rem;line-height:1.4}
-.ios-share{width:22px;height:22px;flex-shrink:0;color:var(--brand)}
-.ios-close{position:absolute;top:.4rem;right:.5rem;width:28px;height:28px;border:0;background:none;color:var(--muted);
-  font-size:1.3rem;line-height:1;cursor:pointer;border-radius:8px}
-.ios-close:hover{background:var(--bg-2);color:var(--text)}
-@media (min-width:520px){.ios-install{left:auto;right:calc(16px + env(safe-area-inset-right))}}
+.install-btn[hidden]{display:none}
 
 /* ---------- Reveal animation ---------- */
 [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}

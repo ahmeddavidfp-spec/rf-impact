@@ -84,3 +84,7 @@ publiques de RF Impact. Certaines valeurs (ex. e-mail) sont des hypothèses à c
 
 ---
 *Site de démonstration créé pour RF Impact - contenus et visuels à valider par l'entreprise.*
+
+## Journal des modifications
+
+- **2026-09-24** - Bouton « Installer l'app » affiché uniquement sur Android, après l'événement `beforeinstallprompt` du navigateur ; il est retiré de la page sur ordinateur, sur iPhone et en mode app installée. La notice iOS (« Partager » puis écran d'accueil) est supprimée, avec ses traductions FR/NL/EN et son CSS. Règle `.install-btn[hidden]{display:none}` ajoutée. Cache du service worker passé à `rf-impact-v14`.

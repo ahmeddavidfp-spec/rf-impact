@@ -659,17 +659,8 @@
     </a>
   </nav>
 
-  <!-- Install PWA prompt (Android/Chrome via beforeinstallprompt) -->
+  <!-- Bouton d'installation : Android uniquement, apres beforeinstallprompt -->
   <button id="installBtn" class="install-btn" hidden>⬇ <span data-i18n="pwa.install">Installer l'app</span></button>
-
-  <!-- Notice d'installation iOS (Safari n'a pas beforeinstallprompt) -->
-  <div id="iosInstall" class="ios-install" role="note" hidden>
-    <button class="ios-close" id="iosClose" type="button" aria-label="Fermer">&times;</button>
-    <p class="ios-install-text">
-      <svg class="ios-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 7 4-4 4 4"/><path d="M6 11H4.5v8.5h15V11H18"/></svg>
-      <span data-i18n="pwa.iosNotice">Pour installer l'app : touchez Partager dans Safari, puis « Sur l'écran d'accueil ».</span>
-    </p>
-  </div>
 
   <script src="app.js"></script>
 </body>

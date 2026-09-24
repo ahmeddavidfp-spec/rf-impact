@@ -1,5 +1,5 @@
 /* RF Impact - Service Worker */
-const CACHE = 'rf-impact-v13';
+const CACHE = 'rf-impact-v14';
 const OFFLINE = './hors-ligne.html';
 const ASSETS = [
   './',
