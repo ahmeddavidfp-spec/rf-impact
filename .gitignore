@@ -17,3 +17,6 @@ outputs/
 
 # Documentation interne (locale, ne pas publier)
 RF-Impact-Documentation.html
+
+# Etat local de wrangler (KV de test de la maintenance) : propre a cette machine
+.wrangler/

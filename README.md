@@ -25,6 +25,9 @@ hors-ligne** (service worker) nécessite d'être servi en `http(s)://`.
 | `manifest.webmanifest` | Métadonnées de l'app installable |
 | `sw.js` | Service worker (cache hors-ligne du « app shell ») |
 | `assets/` | Logo, icône PWA et visuels de la galerie (SVG) |
+| `functions/_middleware.js` | Interrupteur de maintenance du parc Scribeo : lit la clé `rfimpact` de l'espace KV commun |
+| `wrangler.toml` | Liaison `MAINT` vers l'espace KV commun, en production et en prévisualisation |
+| `_routes.json` | Adresses qui passent par l'interrupteur : tout sauf `assets/` |
 
 ## ✅ Fonctionnalités
 
@@ -76,6 +79,22 @@ Site 100 % statique → hébergeable gratuitement sur **Netlify**, **Vercel**,
 **Cloudflare Pages** ou **GitHub Pages**. Glisser-déposer le dossier suffit sur
 Netlify. Prévoir un certificat **HTTPS** (inclus chez ces hébergeurs) pour la PWA.
 
+### Interrupteur de maintenance
+
+En ligne sur **https://rf-impact.pages.dev**, projet Pages `rf-impact` relié au
+dépôt : un push sur `main` redéploie. `functions/_middleware.js` lit la clé
+`rfimpact` de l'espace KV commun du parc (`c45395e1f7db4e72988e90924c650d15`,
+liaison `MAINT`). `off` sert la page de coupure Scribeo en 503, `tech` sert
+`hors-ligne.html` en 503, toute autre valeur laisse le site répondre. `/sw.js`
+et `/robots.txt` passent toujours. Comme `wrangler.toml` contient
+`pages_build_output_dir`, Pages s'y fie à la place de l'interface : une
+variable ou une liaison ajoutée un jour doit l'être dans ce fichier, les
+secrets exceptés. `_routes.json` exclut `assets/` pour que les images ne
+fassent pas tourner la fonction (quota gratuit de 100 000 requêtes par jour
+pour tout le compte). Test local : `npx wrangler kv key put --binding MAINT
+rfimpact off --local` puis `npx wrangler pages dev .` ; jamais `--remote`, qui
+couperait le vrai site.
+
 ## ℹ️ Sources des informations
 
 Données rassemblées depuis le web : fiche Google Business / annuaire Bolid
@@ -87,4 +106,5 @@ publiques de RF Impact. Certaines valeurs (ex. e-mail) sont des hypothèses à c
 
 ## Journal des modifications
 
+- **2026-09-24** - Interrupteur de maintenance commun du parc Scribeo : `functions/_middleware.js` (clé `rfimpact`), `wrangler.toml` (liaison KV `MAINT` en production et en prévisualisation, date de compatibilité 2026-08-04 reprise de l'interface, qui ne portait ni variable ni secret), `_routes.json` (exclut `assets/`). Testé en local : `off` donne 503 sur l'accueil, `/sw.js`, `/robots.txt` et les images restent en 200. `.wrangler/` ignoré par git. Cache du service worker passé à `rf-impact-v15`.
 - **2026-09-24** - Bouton « Installer l'app » affiché uniquement sur Android, après l'événement `beforeinstallprompt` du navigateur ; il est retiré de la page sur ordinateur, sur iPhone et en mode app installée. La notice iOS (« Partager » puis écran d'accueil) est supprimée, avec ses traductions FR/NL/EN et son CSS. Règle `.install-btn[hidden]{display:none}` ajoutée. Cache du service worker passé à `rf-impact-v14`.

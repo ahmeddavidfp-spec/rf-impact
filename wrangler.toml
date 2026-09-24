@@ -1,0 +1,27 @@
+# Configuration du projet Cloudflare Pages rf-impact.
+#
+# Ce fichier existe pour une seule raison : lier l'espace KV de maintenance aux
+# Functions du projet. Sans lui, la liaison devrait se faire a la main dans
+# l'interface Cloudflare, pour la production ET pour les previsualisations, et
+# rien dans le depot ne dirait qu'elle existe.
+#
+# Attention : des que pages_build_output_dir est present, Pages se fie a ce
+# fichier plutot qu'a la configuration de l'interface. Le site n'a aucune etape
+# de build, ses pages sont a la racine du depot, d'ou le point. Le 2026-09-24,
+# l'interface ne portait ni variable, ni secret, ni autre liaison : rien
+# d'autre a recopier. La date de compatibilite est celle de l'interface.
+
+name = "rf-impact"
+pages_build_output_dir = "."
+compatibility_date = "2026-08-04"
+
+# Espace KV commun du parc Scribeo : une cle par projet, "off" coupe le site.
+# Ecrit par le tableau de bord ou la conversation privee, lu par le middleware.
+[[kv_namespaces]]
+binding = "MAINT"
+id = "c45395e1f7db4e72988e90924c650d15"
+
+# Les previsualisations lisent le meme espace : une coupure vaut partout.
+[[env.preview.kv_namespaces]]
+binding = "MAINT"
+id = "c45395e1f7db4e72988e90924c650d15"
